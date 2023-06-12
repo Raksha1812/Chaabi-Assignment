@@ -1,7 +1,7 @@
-.App {
+.header {
   text-align: center;
   background-color:aqua;
-  background-image: url(typing.png);
+  background-image: url("typing.png");
 }
 
 .App-logo {
