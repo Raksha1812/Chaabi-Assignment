@@ -1,4 +1,5 @@
 import './TypingBox.css';
+import '../App.css'
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { inputKey, resetKeys } from '../actions';
@@ -72,16 +73,20 @@ const TypingBox = (props) => {
     setCurrentKey(targetKeys.charAt(totalKeys));
   }, [totalKeys]);
 
+
   return (
     <div className="header">
-      <div>Time Remaining: {timer} seconds</div>
-      <div>
+      <div className="timer">Time Remaining: {timer} seconds</div>
+      <div className="key-stats">
         Keys: {correctKeys}/{totalKeys} (Accuracy: {accuracy}%)
       </div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <div>Next key: {currentKey}</div>
+      <div className="input-container">
+        <input type="text" value={inputValue} onChange={handleInputChange} />
+      </div>
+      <div className="next-key">Next key: {currentKey}</div>
     </div>
   );
+  
 };
 
 
